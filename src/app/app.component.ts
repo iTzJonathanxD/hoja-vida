@@ -43,13 +43,12 @@ export class AppComponent implements OnInit {
     this.loaderService.isLoading$.subscribe((isLoading) => {
       setTimeout(() => {
         this.isLoading = isLoading
-      }, 3000) // Show loader for at least 3 seconds
+      }, 3000)
     })
 
     this.pdfService.isGenerating$.subscribe((isGenerating) => {
       this.isGeneratingPdf = isGenerating
 
-      // Disable body scroll when generating PDF
       if (isGenerating) {
         this.renderer.addClass(document.body, "overflow-hidden")
       } else {

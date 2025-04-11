@@ -31,6 +31,7 @@ export class SidebarComponent implements OnInit {
     { label: "Perfil", target: "profile", icon: "bi-person-circle" },
     { label: "Educación", target: "education", icon: "bi-mortarboard-fill" },
     { label: "Experiencia", target: "experience", icon: "bi-briefcase-fill" },
+    { label: "Proyectos", target: "projects", icon: "bi-clipboard-fill" },
     { label: "Habilidades", target: "skills", icon: "bi-gear-fill" },
   ]
 

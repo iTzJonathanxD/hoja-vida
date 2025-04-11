@@ -97,11 +97,11 @@ export class ResumeDataService {
       projectUrl: "https://github.com/iTzJonathanxD",
     },
     {
-      title: "API de Servicios Financieros",
-      description: "API RESTful para la integración de servicios financieros y procesamiento de pagos.",
+      title: "API para Plataforma de Aula Virtual",
+      description: "API RESTful para la integración de una plataforma de aula virtual procesamiento de pagos con validaciones IA.",
       technologies: ["NestJS", "TypeScript", "MongoDB"],
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      projectUrl: "https://github.com/iTzJonathanxD",
+      imageUrl: "https://i.ibb.co/zVxdm37w/image.png",
+      projectUrl: "https://github.com/iTzJonathanxD/backend-classroom_nova",
     },
   ]
 
