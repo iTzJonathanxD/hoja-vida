@@ -1,0 +1,30 @@
+.skill-bar {
+  margin-bottom: 1.5rem;
+  
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    
+    .skill-name {
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .skill-percentage {
+      color: #666;
+    }
+  }
+  
+  .skill-progress {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    
+    .skill-progress-bar {
+      height: 100%;
+      border-radius: 5px;
+    }
+  }
+}

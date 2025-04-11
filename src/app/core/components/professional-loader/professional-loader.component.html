@@ -1,0 +1,22 @@
+<div class="loader-container" @fadeInOut>
+  <div class="loader-content" @scaleIn>
+    <div class="logo-container">
+      <div class="logo">
+        <img src="https://i.ibb.co/39kw4KMs/IMG-20221018-195223.jpg" alt="Imagen de Jonathan Marin">
+      </div>     
+       <div class="logo-ring"></div>
+    </div>
+    
+    <h1 class="loader-title">Jonathan Marin</h1>
+    <h2 class="loader-subtitle">Desarrollador</h2>
+    
+    <div class="loading-info">
+      <div class="loading-text">{{ loadingText }}</div>
+      <div class="progress">
+        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+             [style.width.%]="loadingProgress"></div>
+      </div>
+      <div class="loading-percentage">{{ loadingProgress }}%</div>
+    </div>
+  </div>
+</div>

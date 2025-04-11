@@ -1,0 +1,118 @@
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.loader-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  
+  .logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-ring {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+    animation: pulse 2s infinite;
+    z-index: 1;
+  }
+}
+.logo img {
+  width: 100px;  
+  height: 100px; 
+  object-fit: cover;
+  border-radius: 50%; 
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.loader-title {
+  font-size: 2.5rem;
+  color: #2E7D32;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.loader-subtitle {
+  font-size: 1.5rem;
+  color: #757575;
+  margin: 0 0 2rem;
+  font-weight: 500;
+}
+
+.loading-info {
+  width: 100%;
+}
+
+.loading-text {
+  text-align: left;
+  margin-bottom: 0.8rem;
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.progress {
+  height: 15px;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.loading-percentage {
+  text-align: right;
+  color: #2E7D32;
+  font-weight: 600;
+  font-size: 1rem;
+}

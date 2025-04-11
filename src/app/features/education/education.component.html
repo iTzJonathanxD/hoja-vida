@@ -1,0 +1,37 @@
+<section id="education" class="education-section animate__animated animate__fadeIn">
+  <div class="card shadow-lg border-0 overflow-hidden">
+    <div class="card-header bg-success text-white p-4">
+      <h2 class="mb-0 fw-bold">Educación</h2>
+    </div>
+    
+    <div class="card-body p-4">
+      <div class="education-timeline">
+        <div class="education-item" 
+             *ngFor="let item of resumeData.educationItems; let i = index" 
+             [attr.data-index]="i"
+             [class.animate__animated]="animatedItems[i]"
+             [class.animate__fadeInLeft]="animatedItems[i] && i % 2 === 0"
+             [class.animate__fadeInRight]="animatedItems[i] && i % 2 !== 0">
+          
+          <div class="timeline-icon">
+            <i class="bi" [ngClass]="'bi-' + item.icon"></i>
+          </div>
+          
+          <div class="timeline-content" [class.right]="i % 2 !== 0">
+            <div class="content-card">
+              <div class="card-header">
+                <h3>{{ item.level }}</h3>
+                <span class="period">{{ item.period }}</span>
+              </div>
+              
+              <div class="card-body">
+                <h4 class="institution">{{ item.institution }}</h4>
+                <p class="degree">{{ item.degree }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

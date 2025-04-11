@@ -1,0 +1,118 @@
+<section id="profile" class="profile-section animate__animated animate__fadeIn" @fadeInUp>
+  <div class="card shadow-lg border-0 overflow-hidden">
+    <div class="card-header bg-success text-white p-4">
+      <h2 class="mb-0 fw-bold">Perfil Profesional</h2>
+    </div>
+    
+    <div class="card-body p-0">
+      <div class="row g-0">
+        <div class="col-lg-4 profile-sidebar">
+          <div class="profile-image">
+            <div class="avatar-container">
+              <!-- Show photo if available, otherwise show initials -->
+              <div class="avatar" *ngIf=" ">JSM</div>
+              <img src="https://i.ibb.co/39kw4KMs/IMG-20221018-195223.jpg" alt="Foto de perfil" class="avatar-img">
+              <div class="avatar-ring"></div>
+            </div>
+          </div>
+          
+          <div class="profile-details">
+            <div class="detail-item">
+              <i class="bi bi-calendar-date"></i>
+              <div>
+                <h6>Edad</h6>
+                <p>{{ resumeData.profile.age }} años</p>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <i class="bi bi-calendar-check"></i>
+              <div>
+                <h6>Nacimiento</h6>
+                <p>{{ resumeData.profile.birthDate }}</p>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <i class="bi bi-geo-alt"></i>
+              <div>
+                <h6>Ubicación</h6>
+                <p>{{ resumeData.profile.location }}</p>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <i class="bi bi-telephone"></i>
+              <div>
+                <h6>Teléfono</h6>
+                <p>{{ resumeData.profile.phone }}</p>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <i class="bi bi-envelope"></i>
+              <div>
+                <h6>Email</h6>
+                <p>{{ resumeData.profile.email }}</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="profile-social">
+            <a [href]="resumeData.profile.github" target="_blank" class="social-btn">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-lg-8 profile-content">
+          <div class="profile-header">
+            <h1 class="profile-name text-success animate__animated animate__fadeInDown">{{ resumeData.profile.name }}</h1>
+            <h3 class="profile-title animate__animated animate__fadeInUp">{{ resumeData.profile.title }}</h3>
+            <div class="divider">
+              <span></span>
+            </div>
+          </div>
+          
+          <div class="profile-bio animate__animated animate__fadeIn animate__delay-1s">
+            <p>{{ resumeData.profile.description }}</p>
+          </div>
+          
+          <div class="profile-highlights">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="highlight-card animate__animated animate__zoomIn animate__delay-1s">
+                  <div class="highlight-icon">
+                    <i class="bi bi-lightbulb"></i>
+                  </div>
+                  <h4>Innovación</h4>
+                  <p>Enfoque creativo para resolver problemas tecnológicos</p>
+                </div>
+              </div>
+              
+              <div class="col-md-4 mb-4">
+                <div class="highlight-card animate__animated animate__zoomIn animate__delay-1s">
+                  <div class="highlight-icon">
+                    <i class="bi bi-graph-up"></i>
+                  </div>
+                  <h4>Crecimiento</h4>
+                  <p>Aprendizaje continuo y desarrollo profesional</p>
+                </div>
+              </div>
+              
+              <div class="col-md-4 mb-4">
+                <div class="highlight-card animate__animated animate__zoomIn animate__delay-1s">
+                  <div class="highlight-icon">
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <h4>Colaboración</h4>
+                  <p>Trabajo efectivo en equipo para lograr objetivos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

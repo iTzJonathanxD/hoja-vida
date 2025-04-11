@@ -1,0 +1,18 @@
+<div class="minecraft-loader" @fadeInOut>
+  <canvas #canvas class="background-canvas"></canvas>
+  
+  <div class="loader-content">
+    <div class="minecraft-logo">
+      <h1>Jonathan Marin</h1>
+      <h2>Desarrollador</h2>
+    </div>
+    
+    <div class="loading-bar-container">
+      <div class="loading-text">{{ loadingText }}</div>
+      <div class="loading-bar">
+        <div class="loading-progress" [style.width.%]="loadingProgress"></div>
+      </div>
+      <div class="loading-percentage">{{ loadingProgress }}%</div>
+    </div>
+  </div>
+</div>

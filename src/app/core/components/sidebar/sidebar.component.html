@@ -1,0 +1,40 @@
+<aside id="sidebar" class="sidebar" [@slideInOut]="sidebarService.isOpen ? 'in' : 'out'">
+  <div class="sidebar-header">
+    <div class="profile-image">
+      <div class="avatar">
+        <img src="https://i.ibb.co/39kw4KMs/IMG-20221018-195223.jpg" alt="Imagen de Jonathan Marin">
+      </div>
+    </div>
+    <h3 class="profile-name">Jonathan Marin</h3>
+    <p class="profile-title">Desarrollador</p>
+  </div>
+  
+  <div class="sidebar-content">
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li *ngFor="let item of navItems" 
+            class="nav-item" 
+            [class.active]="activeSection === item.target">
+          <a (click)="scrollTo(item.target)" class="nav-link">
+            <i class="bi" [ngClass]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="sidebar-footer">
+    <div class="social-links">
+      <a [href]="resumeData.profile.github" target="_blank" class="social-link" title="GitHub">
+        <i class="bi bi-github"></i>
+      </a>
+      <a [href]="'mailto:' + resumeData.profile.email" class="social-link" title="Email">
+        <i class="bi bi-envelope-fill"></i>
+      </a>
+      <a [href]="'tel:' + resumeData.profile.phone" class="social-link" title="Teléfono">
+        <i class="bi bi-telephone-fill"></i>
+      </a>
+    </div>
+  </div>
+</aside>

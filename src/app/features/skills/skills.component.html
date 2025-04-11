@@ -1,0 +1,71 @@
+<section id="skills" class="skills-section animate__animated animate__fadeIn">
+  <div class="card shadow-lg border-0 overflow-hidden">
+    <div class="card-header bg-success text-white p-4">
+      <h2 class="mb-0 fw-bold">Habilidades</h2>
+    </div>
+    
+    <div class="card-body p-4">
+      <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div id="technical-skills" class="skills-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h3 class="category-title">Habilidades Técnicas</h3>
+            </div>
+            
+            <div class="skills-list">
+              <div class="skill-item" 
+                   *ngFor="let skill of resumeData.technicalSkills; let i = index"
+                   [class.animate__animated]="technicalVisible"
+                   [class.animate__fadeInLeft]="technicalVisible"
+                   [style.animation-delay]="(i * 0.1) + 's'">
+                <div class="skill-header">
+                  <h4 class="skill-name">{{ skill.name }}</h4>
+                  <span class="skill-percentage">{{ skill.percentage }}%</span>
+                </div>
+                
+                <div class="skill-bar">
+                  <div class="skill-progress" 
+                       [style.width.%]="technicalVisible ? skill.percentage : 0"
+                       [@progressAnimation]></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div id="soft-skills" class="skills-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="bi bi-person-check"></i>
+              </div>
+              <h3 class="category-title">Habilidades Blandas</h3>
+            </div>
+            
+            <div class="skills-list">
+              <div class="skill-item" 
+                   *ngFor="let skill of resumeData.softSkills; let i = index"
+                   [class.animate__animated]="softVisible"
+                   [class.animate__fadeInRight]="softVisible"
+                   [style.animation-delay]="(i * 0.1) + 's'">
+                <div class="skill-header">
+                  <h4 class="skill-name">{{ skill.name }}</h4>
+                  <span class="skill-percentage">{{ skill.percentage }}%</span>
+                </div>
+                
+                <div class="skill-bar">
+                  <div class="skill-progress soft" 
+                       [style.width.%]="softVisible ? skill.percentage : 0"
+                       [@progressAnimation]></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

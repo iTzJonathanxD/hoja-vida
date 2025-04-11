@@ -1,0 +1,13 @@
+<div class="skill-bar">
+  <div class="skill-info">
+    <span class="skill-name">{{ name }}</span>
+    <span class="skill-percentage">{{ percentage }}%</span>
+  </div>
+  <div class="skill-progress">
+    <div 
+      class="skill-progress-bar" 
+      [style.backgroundColor]="color"
+      [@progressAnimation]="{value: '', params: {percentage: percentage}}"
+    ></div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<section id="experience" class="experience-section animate__animated animate__fadeIn">
+  <div class="card shadow-lg border-0 overflow-hidden">
+    <div class="card-header bg-success text-white p-4">
+      <h2 class="mb-0 fw-bold">Experiencia Laboral</h2>
+    </div>
+    
+    <div class="card-body p-4">
+      <div class="experience-timeline">
+        <div class="experience-card" 
+             *ngFor="let exp of resumeData.experiences; let i = index"
+             [attr.data-index]="i"
+             [class.animate__animated]="animatedItems[i]"
+             [class.animate__fadeInUp]="animatedItems[i]">
+          
+          <div class="card-header" (click)="toggleExpand(i)">
+            <div class="header-content">
+              <div class="job-info">
+                <h3 class="job-title">{{ exp.title }}</h3>
+                <h4 class="company-name">{{ exp.company }}</h4>
+                <span class="job-period" *ngIf="exp.period">{{ exp.period }}</span>
+              </div>
+              
+              <div class="expand-icon">
+                <i class="bi" [ngClass]="expandedIndex === i ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-body" [@expandCollapse]="getState(i)">
+            <h5 class="responsibilities-title">Tareas realizadas:</h5>
+            <ul class="responsibilities-list">
+              <li *ngFor="let responsibility of exp.responsibilities; let j = index" 
+                  class="animate__animated animate__fadeInRight"
+                  [style.animation-delay]="(j * 0.1) + 's'">
+                {{ responsibility }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
