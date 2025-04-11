@@ -1,23 +1,16 @@
 <div class="app-container">
   <!-- Professional Loader -->
   <app-professional-loader *ngIf="isLoading"></app-professional-loader>
-  
-  <!-- Main Content -->
-  <div *ngIf="!isLoading" class="main-wrapper" @fadeIn>
-    <!-- Sidebar -->
+    <div *ngIf="!isLoading" class="main-wrapper" @fadeIn>
     <app-sidebar></app-sidebar>
     
-    <!-- Main Content -->
     <div class="content-wrapper" [class.sidebar-open]="sidebarService.isOpen">
-      <!-- Sidebar Toggle Button -->
       <button id="sidebarToggle" class="btn btn-success sidebar-toggle" (click)="toggleSidebar()">
         <i class="bi" [ngClass]="sidebarService.isOpen ? 'bi-x-lg' : 'bi-list'"></i>
       </button>
       
-      <!-- Header -->
       <app-header></app-header>
       
-      <!-- Main Content -->
       <main class="container py-4" id="resume-container">
         <div class="d-flex justify-content-end mb-4">
           <button id="pdfButton" class="btn btn-success btn-lg animate__animated animate__pulse animate__infinite animate__slower" (click)="downloadPdf()">
@@ -36,7 +29,6 @@
         <app-footer></app-footer>
       </main>
       
-      <!-- Scroll to Top Button -->
       <button 
         *ngIf="showScrollTop" 
         class="btn btn-success scroll-top-btn animate__animated animate__fadeIn" 
@@ -46,7 +38,6 @@
     </div>
   </div>
   
-  <!-- PDF Generation Overlay -->
   <div *ngIf="isGeneratingPdf" class="pdf-overlay">
     <div class="pdf-loader">
       <div class="spinner-border text-light" role="status">

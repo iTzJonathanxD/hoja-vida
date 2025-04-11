@@ -24,7 +24,6 @@ export class SkillsComponent implements OnInit {
   constructor(public resumeData: ResumeDataService) {}
 
   ngOnInit() {
-    // Set up intersection observer for scroll animations
     this.setupIntersectionObserver()
   }
 
@@ -48,7 +47,6 @@ export class SkillsComponent implements OnInit {
       })
     }, options)
 
-    // Observe skill sections
     setTimeout(() => {
       const technical = document.getElementById("technical-skills")
       const soft = document.getElementById("soft-skills")

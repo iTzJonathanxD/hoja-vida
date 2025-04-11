@@ -1,27 +1,77 @@
-# HojaVitae
+# Hoja de Vida - Jonathan Marin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## Descripción del Proyecto
 
-## Development server
+Este proyecto es una hoja de vida digital construida con Angular, diseñada para presentar de forma clara, visual y profesional toda la información relevante sobre una persona: perfil, experiencia laboral, formación académica, habilidades y proyectos realizados.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+El objetivo principal es ofrecer una alternativa moderna a la hoja de vida tradicional, que pueda compartirse fácilmente y visualizarse desde cualquier dispositivo gracias a su diseño responsive.
 
-## Code scaffolding
+## Configuración del Proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Requisitos Previos
+- Node.js (versión 18 o superior)
+- npm (gestor de paquetes)
+- ng (libreria de angular)
 
-## Build
+### Instalación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+# Clonar el repositorio
+git clone https://github.com/iTzJonathanxD/hoja-vida-angular.git
 
-## Running unit tests
+# Navegar al directorio del proyecto
+cd hoja-vida-angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Instalar dependencias
+npm install
 
-## Running end-to-end tests
+# Iniciar servidor de desarrollo
+ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
 
-## Further help
+## Arquitectura Frontend
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Tecnologías utilizadas
+
+- **Angular** 18+
+- **SCSS** para estilos
+- **Modular Architecture** (core, shared, features)
+- **Responsive Design** con enfoque adaptable
+
+### Estructura del Proyecto
+```
+
+src/ 
+├── app/ 
+│ ├── assets/ 
+│ │ └── prohto.jpg # Imagen utilizada en el portafolio 
+│ ├── core/ # Elementos fundamentales del proyecto 
+│ │ ├── components/ │ │ │ ├── footer/ # Componente de pie de página 
+│ │ │ ├── header/ # Componente de cabecera 
+│ │ │ ├── minecraft-loader/ # Animación personalizada tipo Minecraft 
+│ │ │ ├── professional-loader/# Loader con estilo profesional 
+│ │ │ └── sidebar/ # Barra lateral de navegación 
+│ │ ├── services/ # Servicios reutilizables 
+│ │ └── core.module.ts # Módulo que agrupa el núcleo del proyecto 
+│ ├── features/ # Funcionalidades principales del portafolio 
+│ │ ├── education/ # Sección de educación 
+│ │ ├── experience/ # Sección de experiencia laboral 
+│ │ ├── profile/ # Sección del perfil personal 
+│ │ ├── projects/ # Proyectos realizados 
+│ │ └── skills/ # Habilidades técnicas 
+│ │ └── feature.module.ts # Módulo de funcionalidades 
+│ ├── shared/ # Componentes reutilizables en todo el proyecto 
+│ │ └── components/ 
+│ │ ├── section-title/ # Títulos de secciones 
+│ │ └── skill-bar/ # Barra visual de habilidades 
+│ ├── app.component.html # Componente raíz (vista) 
+│ ├── app.component.scss # Estilos globales del componente raíz 
+│ └── app.component.ts # Lógica del componente raíz
+│ └── app.component.module # Módulo principal de funcionalidades 
+
+  
+```
+
+## Licencia
+MIT

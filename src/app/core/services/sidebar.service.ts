@@ -13,12 +13,10 @@ export class SidebarService {
   }
 
   constructor() {
-    // Check if we're on desktop and set sidebar to open by default
     if (window.innerWidth >= 992) {
       this.isOpenSubject.next(true)
     }
 
-    // Listen for window resize events
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 992) {
         this.isOpenSubject.next(true)

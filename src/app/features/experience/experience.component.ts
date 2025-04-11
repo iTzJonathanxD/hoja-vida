@@ -25,10 +25,7 @@ export class ExperienceComponent implements OnInit {
   constructor(public resumeData: ResumeDataService) {}
 
   ngOnInit() {
-    // Initialize animation states
     this.animatedItems = this.resumeData.experiences.map(() => false)
-
-    // Set up intersection observer for scroll animations
     this.setupIntersectionObserver()
   }
 

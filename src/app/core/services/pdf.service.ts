@@ -16,7 +16,6 @@ export class PdfService {
     this.isGeneratingSubject.next(true)
 
     try {
-      // Create a clone of the entire document to avoid modifying the original
       const originalContent = document.body.innerHTML
       const printContent = document.getElementById("resume-container")
 
@@ -24,13 +23,11 @@ export class PdfService {
         throw new Error("Resume container not found")
       }
 
-      // Create a new document for printing
       const printWindow = window.open("", "_blank")
       if (!printWindow) {
         throw new Error("Could not open print window")
       }
 
-      // Add necessary styles to the print window
       printWindow.document.write(`
         <html>
           <head>
@@ -97,38 +94,30 @@ export class PdfService {
         </html>
       `)
 
-      // Wait for content to load
       printWindow.document.close()
 
-      // Remove elements that shouldn't be in the PDF
       const elementsToRemove = printWindow.document.querySelectorAll(
         ".no-print, .sidebar-toggle, #pdfButton, .scroll-top-btn",
       )
       elementsToRemove.forEach((el) => el.remove())
 
-      // Wait for images to load
       setTimeout(async () => {
         try {
-          // Use html2canvas and jsPDF
           const pdf = new jspdf("p", "mm", "a4")
           const contentToPrint = printWindow.document.body
 
-          // Get the dimensions
           const pdfWidth = pdf.internal.pageSize.getWidth()
           const pdfHeight = pdf.internal.pageSize.getHeight()
 
-          // Calculate the number of pages
           const htmlHeight = contentToPrint.scrollHeight
           const htmlWidth = contentToPrint.scrollWidth
           const ratio = htmlHeight / htmlWidth
 
-          // Render each page
           let position = 0
           let remainingHeight = htmlHeight
           const pageHeight = pdfHeight - 20 // Margins
 
           while (remainingHeight > 0) {
-            // Capture the current portion of the page
             const canvas = await html2canvas(contentToPrint, {
               y: position,
               height: Math.min(htmlHeight - position, pageHeight * (htmlWidth / pdfWidth)),
@@ -138,7 +127,6 @@ export class PdfService {
               backgroundColor: "#ffffff",
             })
 
-            // Add the image to the PDF
             const imgData = canvas.toDataURL("image/png")
             if (position > 0) {
               pdf.addPage()
@@ -146,15 +134,12 @@ export class PdfService {
 
             pdf.addImage(imgData, "PNG", 10, 10, pdfWidth - 20, (canvas.height * (pdfWidth - 20)) / canvas.width)
 
-            // Move to next portion
             position += pageHeight * (htmlWidth / pdfWidth)
             remainingHeight -= pageHeight * (htmlWidth / pdfWidth)
           }
 
-          // Save the PDF
           pdf.save("Jonathan_Marin_CV.pdf")
 
-          // Close the print window
           printWindow.close()
         } catch (error) {
           console.error("Error generating PDF:", error)

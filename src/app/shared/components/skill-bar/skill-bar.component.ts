@@ -22,7 +22,6 @@ export class SkillBarComponent implements OnInit {
   animationState = "initial"
 
   ngOnInit(): void {
-    // Delay to ensure the animation is visible
     setTimeout(() => {
       this.animationState = "final"
     }, 100)
